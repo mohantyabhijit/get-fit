@@ -1,0 +1,58 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>Get Fit Extension's Popup</title>
+    <style type="text/css">
+      body {
+        margin: 10px;
+        white-space: nowrap;
+      }
+
+      h1 {
+        font-size: 15px;
+      }
+
+      #container {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+      }
+    </style>
+
+    <!--
+      - JavaScript and HTML must be in separate files: see our Content Security
+      - Policy documentation[1] for details and explanation.
+      -
+      - [1]: https://developer.chrome.com/extensions/contentSecurityPolicy
+    -->
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+    <h1>Adjust frequency of reminders :-</h1>
+    <div id="container">
+      <span>Prompt me to get up and walk every </span>
+      <select id="get_up_dropdown">
+        <option selected disabled hidden value=''></option>
+        <option value="white">15 mins</option>
+        <option value="pink">30 mins</option>
+        <option value="green">45 mins</option>
+        <option value="yellow">60 mins</option>
+      </select>
+      <br/>
+      <span>Prompt me to drink water every :- </span>
+      <select id="drink_water_dropdown">
+        <option selected disabled hidden value=''></option>
+        <option value="white">15 mins</option>
+        <option value="pink">30 mins</option>
+        <option value="green">45 mins</option>
+        <option value="yellow">60 mins</option>
+      </select>
+    </div>
+  </body>
+</html>
